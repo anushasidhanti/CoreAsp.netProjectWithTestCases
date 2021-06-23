@@ -39,5 +39,17 @@ namespace TestProject1
             Assert.Equal("text/plain; charset=utf-8", response.Content.Headers.ContentType.ToString());
 
         }
+
+        [Theory]
+        [InlineData("/Home/Index2")]
+        public async Task GetHttpRequest3(string url)
+        {
+            var client = _factory.CreateClient();
+            var response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            Assert.Equal("Hello World", response.Content.ReadAsStringAsync().Result);
+            Assert.Equal("text/plain; charset=utf-8", response.Content.Headers.ContentType.ToString());
+
+        }
     }
 }
