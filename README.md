@@ -1,0 +1,1 @@
+# CoreAsp.netProjectWithTestCases
