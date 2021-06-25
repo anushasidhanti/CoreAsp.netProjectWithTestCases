@@ -22,7 +22,7 @@ namespace MVCCore.Controllers
         public string Index2()
         {
             //return Environment.GetEnvironmentVariable("Some_Random_Variable");
-            return "Hello World";
+            return "Hello World!";
         }
 
         public ViewResult Index()
