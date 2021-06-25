@@ -59,7 +59,7 @@ pipeline{
         stage('Docker run'){
             steps{
                 script{
-                    dockerImage.run("-p 9000:80 --rm --name pipelinedockerContainer")
+                    dockerImage.run("-p 9000:80 --rm")
                 }
             }
         }
