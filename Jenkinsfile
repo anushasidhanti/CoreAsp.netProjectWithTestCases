@@ -15,6 +15,13 @@ pipeline{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], browser: [$class: 'GithubWeb', repoUrl: ''], extensions: [[$class: 'CleanBeforeCheckout', deleteUntrackedNestedRepositories: true]], userRemoteConfigs: [[url: 'https://github.com/anushasidhanti/CoreAsp.netProjectWithTestCases']]])
             }            
         }
+        stage('Run Tests'){
+            steps{
+                script{
+                    bat(script:'@dotnet test')
+                }
+            }
+        }
         stage('Build Docker Image'){
             steps{
                 script{
